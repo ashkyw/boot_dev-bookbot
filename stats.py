@@ -6,6 +6,7 @@ def word_count(book_text: str) -> int:
 def letter_count(book_text: str) -> dict:
     letter_count = {}
     letters = book_text.lower()
+
     for character in letters:
         if character in letter_count:
             letter_count[character] += 1
@@ -15,7 +16,7 @@ def letter_count(book_text: str) -> dict:
     return letter_count
 
 
-def sorted_letters(letters: dict):
+def sorted_letters(letters: dict) -> None:
     letters_list = list(letters.items())
     dict_list = []
     for tuples in letters_list:

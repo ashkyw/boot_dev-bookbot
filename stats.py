@@ -15,14 +15,13 @@ def letter_count(book_text: str) -> dict:
     return letter_count
 
 
-def sort_dictionary(letters: dict) -> list:
-    # return as e: num
-    # return greatest count -> least count
-    # use isalpha()
-    letter_list = []
-    for letters["character"] in letters:
-        letter_list.append(
-            letters["character"].sort(reverse=True, key=letters["character"].islapha())
-            # key=lambda letter: letter["character"]
-        )
-    print(letter_list)
+def sorted_letters(letters: dict):
+    letters_list = list(letters.items())
+    dict_list = []
+    for tuples in letters_list:
+        if tuples[0].isalpha():
+            dict_list.append({"item": tuples[0], "num": tuples[1]})
+
+    sort_list = sorted(dict_list, key=lambda x: x["num"], reverse=True)
+    for item in sort_list:
+        print(f"{item['item']}: {item['num']}")
